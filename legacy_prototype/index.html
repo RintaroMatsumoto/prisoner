@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisoner Training - Iron Log Dialogue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <!-- 視覚の「マスター」 -->
+        <section id="master-visual">
+            <div class="visual-scanline"></div>
+            <div class="visual-content">
+                <div class="master-silhouette">[MASTER]</div>
+                <!-- リズムガイド（初期は非表示） -->
+                <div id="rhythm-guide" style="display: none;">
+                    <div class="cadence-bar"></div>
+                    <div class="cadence-text">READY</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 対話の「ダイアログ」 -->
+        <section id="dialogue-box">
+            <p id="dialogue-text"></p>
+            <span class="blinking-cursor">_</span>
+        </section>
+
+        <!-- 行動の「アクション」 -->
+        <section id="action-area">
+            <button class="action-btn" onclick="console.log('Start')">トレーニングを開始する</button>
+            <button class="action-btn" onclick="console.log('History')">記録を確認する</button>
+        </section>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
