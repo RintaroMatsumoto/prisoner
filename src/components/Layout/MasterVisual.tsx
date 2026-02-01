@@ -45,7 +45,7 @@ export const MasterVisual = ({ rhythmPhase = 'IDLE', isActive = false }: MasterV
             flex: 2,
             borderBottom: '2px solid var(--accent)',
             color: 'white',
-            background: `radial-gradient(circle at center, rgba(37, 37, 37, 0.8) 0%, #000 100%), url('/assets/instructor_v2.png')`,
+            background: `linear-gradient(to bottom, rgba(37, 37, 37, 0.4) 0%, #000 100%), url('/assets/instructor_v2.png')`,
             backgroundSize: 'contain',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',

@@ -119,7 +119,7 @@ function App() {
             <RecommendationCard
               userState={userState}
               onSelectExercise={(id) => {
-                setSelectedExercise(id);
+                setCurrentExerciseId(id);
                 const uState = userState[id as keyof typeof userState] as any;
                 if (uState.level >= 10) { // All Clear check
                   // Logic to handle max level if needed, or just show list

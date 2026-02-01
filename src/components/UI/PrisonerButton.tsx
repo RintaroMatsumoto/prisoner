@@ -8,15 +8,19 @@ interface PrisonerButtonProps {
     highlight?: boolean; // Recommendation highlight
     children?: ReactNode; // For extra content
     style?: CSSProperties;
+    variant?: 'default' | 'danger';
 }
 
-export const PrisonerButton = ({ label, onClick, progress, level, highlight, children, style }: PrisonerButtonProps) => {
+export const PrisonerButton = ({ label, onClick, progress, level, highlight, children, style, variant = 'default' }: PrisonerButtonProps) => {
+    const borderColor = variant === 'danger' ? '#ff0000' : 'var(--accent)';
+    const textColor = variant === 'danger' ? '#ff0000' : 'var(--text-main)';
+
     return (
         <button className={`action-btn ${highlight ? 'recom-highlight' : ''}`} onClick={onClick} style={{
             background: 'transparent',
-            border: '1px solid var(--accent)',
-            borderLeft: '4px solid var(--accent)',
-            color: 'var(--text-main)',
+            border: `1px solid ${borderColor}`,
+            borderLeft: `4px solid ${borderColor}`,
+            color: textColor,
             padding: '16px 20px',
             fontFamily: 'var(--font-stack)',
             fontSize: '1rem',
