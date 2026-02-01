@@ -19,7 +19,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ userStat
 
     return (
         <div className={`
-            w-full border-2 p-4 mb-4 relative overflow-hidden
+            w-full border-[4px] p-4 mb-4 relative overflow-hidden
             ${details.urgency === 'high' ? 'border-[#ff0000] bg-[#1a0000]' : 'border-[#00ff41] bg-[#001a00]'}
         `}>
             {/* Background Glitch Effect for High Urgency */}

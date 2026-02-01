@@ -59,7 +59,7 @@ export const ResultEntry: React.FC<ResultEntryProps> = ({ standards, onComplete 
     const getPos = (val: number) => Math.min((val / maxScale) * 100, 100);
 
     return (
-        <div className="flex flex-col gap-6 w-full max-w-md mx-auto p-4 border-2 border-white bg-black/80">
+        <div className="flex flex-col gap-6 w-full max-w-md mx-auto p-4 border-[4px] border-white bg-black/80">
             {/* Flavor Text */}
             <div className="min-h-[60px] flex items-center justify-center text-center border-b border-gray-700 pb-2">
                 <p className="text-[#00ff41] font-mono whitespace-pre-wrap animate-pulse">{flavorText}</p>

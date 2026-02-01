@@ -51,7 +51,7 @@ export const TrainingCalendar: React.FC<TrainingCalendarProps> = ({ userState })
     };
 
     return (
-        <div className="w-full max-w-md mx-auto border border-[#333] bg-[#050505] p-2 mt-4 font-mono select-none">
+        <div className="w-full max-w-md mx-auto border-[4px] border-[#333] bg-[#050505] p-2 mt-4 font-mono select-none">
             {/* Header */}
             <div className="flex justify-between items-center mb-2 px-2 text-[#00ff41]">
                 <button onClick={prevMonth} className="hover:bg-[#333] px-2">{'<'}</button>

@@ -17,9 +17,9 @@ export const PrisonerButton = ({ label, onClick, progress, level, highlight, chi
 
     return (
         <button className={`action-btn ${highlight ? 'recom-highlight' : ''}`} onClick={onClick} style={{
-            background: 'transparent',
-            border: `1px solid ${borderColor}`,
-            borderLeft: `4px solid ${borderColor}`,
+            background: '000',
+            border: `4px solid ${borderColor}`,
+            borderLeft: `8px solid ${borderColor}`,
             color: textColor,
             padding: '16px 20px',
             fontFamily: 'var(--font-stack)',

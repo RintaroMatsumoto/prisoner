@@ -16,6 +16,10 @@
   --border-style: 4px double var(--accent);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--bg-color);
   /* background-image: url('assets/bg_main.png');  -- Will be handled dynamically or in Layout */
