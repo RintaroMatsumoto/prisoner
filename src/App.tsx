@@ -10,6 +10,8 @@ import { calculateRank, getDailyOrders } from './utils/gameLogic';
 import { EXERCISES } from './data/exercises';
 // import './App.css'; // Removed unused styles
 import { pushupLevel1 } from './data/pushups';
+import { pushupLevel2 } from './data/pushups_level2';
+import { pushupLevel3 } from './data/pushups_level3';
 import TrainingDetailPage from './components/TrainingDetailPage';
 
 // View Enum
@@ -98,9 +100,40 @@ function App() {
               const orders = getDailyOrders(userState);
               if (orders.length > 0) {
                 const names = orders.map(id => EXERCISES[id].name).join(' & ');
+                // return (
+                //   <div className="flex-1 overflow-auto bg-[#1b1b1b] p-4 font-mono text-[#00ff41]">
+                //     <TrainingDetailPage data={pushupLevel1} />
+                //   </div>
+                // );
+
+                // DEBUG: Level Selector for Content Verification
                 return (
                   <div className="flex-1 overflow-auto bg-[#1b1b1b] p-4 font-mono text-[#00ff41]">
-                    <TrainingDetailPage data={pushupLevel1} />
+                    <div className="flex gap-2 mb-4">
+                      <button
+                        onClick={() => setCurrentExerciseId('pushup-1')}
+                        className="p-2 border border-white text-xs hover:bg-[#2038ec]"
+                      >
+                        LEVEL 1
+                      </button>
+                      <button
+                        onClick={() => setCurrentExerciseId('pushup-2')}
+                        className="p-2 border border-white text-xs hover:bg-[#2038ec]"
+                      >
+                        LEVEL 2
+                      </button>
+                      <button
+                        onClick={() => setCurrentExerciseId('pushup-3')}
+                        className="p-2 border border-white text-xs hover:bg-[#2038ec]"
+                      >
+                        LEVEL 3
+                      </button>
+                    </div>
+                    <TrainingDetailPage data={
+                      currentExerciseId === 'pushup-3' ? pushupLevel3 :
+                        currentExerciseId === 'pushup-2' ? pushupLevel2 :
+                          pushupLevel1
+                    } />
                   </div>
                 );
               }

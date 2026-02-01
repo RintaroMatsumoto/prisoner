@@ -1,4 +1,4 @@
-import { TrainingLevel } from '../types/training';
+import type { TrainingLevel } from '../types/training';
 
 export const pushupLevel1: TrainingLevel = {
     id: 'pushup-1',
