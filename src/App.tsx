@@ -9,6 +9,8 @@ import { usePrisonerState } from './hooks/usePrisonerState';
 import { calculateRank, getDailyOrders } from './utils/gameLogic';
 import { EXERCISES } from './data/exercises';
 // import './App.css'; // Removed unused styles
+import { pushupLevel1 } from './data/pushups';
+import TrainingDetailPage from './components/TrainingDetailPage';
 
 // View Enum
 type ViewState = 'BOOT' | 'ONBOARDING_NAME' | 'MENU' | 'EXERCISE_LIST' | 'TRAINING' | 'RESULT' | 'HISTORY';
@@ -97,8 +99,8 @@ function App() {
               if (orders.length > 0) {
                 const names = orders.map(id => EXERCISES[id].name).join(' & ');
                 return (
-                  <div className="daily-orders-title">
-                    &gt;&gt; 本日の指令: {names}
+                  <div className="flex-1 overflow-auto bg-[#1b1b1b] p-4 font-mono text-[#00ff41]">
+                    <TrainingDetailPage data={pushupLevel1} />
                   </div>
                 );
               }
