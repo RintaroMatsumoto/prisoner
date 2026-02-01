@@ -59,3 +59,22 @@ export function getDailyOrders(state: UserState): string[] {
     // Return top 2 IDs
     return candidates.slice(0, 2).map(c => c.id);
 }
+
+export function getRecommendationDetails(state: UserState, exerciseId: string): { reason: string, urgency: 'high' | 'medium' | 'low' } {
+    const exerciseState = state[exerciseId as keyof UserState] as any;
+    if (!exerciseState || !exerciseState.history || exerciseState.history.length === 0) {
+        return { reason: "貴様、まだ一度もこの痛みを知らないようだな...", urgency: 'high' };
+    }
+
+    const lastDate = new Date(exerciseState.history[exerciseState.history.length - 1].date);
+    const diffTime = Math.abs(new Date().getTime() - lastDate.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays > 7) {
+        return { reason: `${diffDays}日もサボっているぞ！筋肉が泣いている！`, urgency: 'high' };
+    } else if (diffDays > 3) {
+        return { reason: "そろそろこの部位を再び虐め抜く時間だ。", urgency: 'medium' };
+    } else {
+        return { reason: "休むな！継続こそが力だ！", urgency: 'low' };
+    }
+}

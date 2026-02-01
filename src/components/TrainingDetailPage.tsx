@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrainingLevel } from '../types/training';
+import type { TrainingLevel } from '../types/training';
 
 const TrainingDetailPage: React.FC<{ data: TrainingLevel }> = ({ data }) => {
   return (
